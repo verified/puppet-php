@@ -31,9 +31,8 @@ define php::module::ini (
     }
     
     # set whether to use zend_ prefix
-    $ext_prefix = ""
     if $isZend == true {
-        ext_prefix = "zend_"
+        $zend = "zend_"
     }
 
     # INI configuration file
