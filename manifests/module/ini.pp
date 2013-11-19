@@ -24,7 +24,7 @@ define php::module::ini (
     # Strip 'pecl-*' prefix is present, since .ini files don't have it
     $modname = regsubst($title , '^pecl-', '', G)
     
-    if isZend == true
+    if $isZend == true
         $zend = "zend_"
     else
         $zend = ""
