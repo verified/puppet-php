@@ -31,7 +31,10 @@ define php::module::ini (
     }
     
     # set whether to use zend_ prefix
-    $zend = $isZend ? 'zend_' : ''
+    $zend = ""
+    if $isZend == true {
+        $zend = "zend_"
+    }
 
     # INI configuration file
     file { "/etc/php.d/${modname}.ini":
