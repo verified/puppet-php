@@ -20,11 +20,11 @@ define php::module::ini (
     $settings = {},
     $ensure   = undef
 ) {
-
-    # Strip 'pecl-*' prefix is present, since .ini files don't have it
-    $modname = regsubst($title , '^pecl-', '', G)
     
     $zend = if $isZend then "zend_" else "" end
+    
+    # Strip 'pecl-*' prefix is present, since .ini files don't have it
+    $modname = regsubst($title , '^pecl-', '', G)
 
     # Package name
     $rpmpkgname = $pkgname ? {
