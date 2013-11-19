@@ -21,7 +21,7 @@ define php::module::ini (
     $ensure   = undef
 ) {
     
-    $zend = if $isZend then "zend_" else "" end
+    $zend = $isZend ? "zend_" : " "
     
     # Strip 'pecl-*' prefix is present, since .ini files don't have it
     $modname = regsubst($title , '^pecl-', '', G)
