@@ -33,6 +33,7 @@ define php::module::ini (
     # set whether to use zend_ prefix
     if $isZend == true {
         $zend = "zend_"
+        $ext_path = "/usr/lib64/php/modules/"
     }
 
     # INI configuration file
