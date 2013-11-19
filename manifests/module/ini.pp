@@ -25,7 +25,7 @@ define php::module::ini (
     # Strip 'pecl-*' prefix is present, since .ini files don't have it
     $modname = regsubst($title , '^pecl-', '', G)
     
-    $zend = "zend_" unless $isZend != true
+    $zend = "zend_" unless $isZend == false
 
     # Package name
     $rpmpkgname = $pkgname ? {
